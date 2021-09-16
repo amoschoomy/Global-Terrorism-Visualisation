@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": "Global Terrorism Around the World from 1970-2017",
+  "description": "A choropleth map depicting U.S. unemployment rates by county in 2009.",
+  "width": 960,
+  "height": 500,
+  "data": [
+    {
+      "name": "terror",
+      "url": "data\\globalterrorismdb_0718dist.csv",
+      "format": {
+        "type": "csv",
+        "parse": "auto",
+        "delimiter": ","
+      },
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "country_txt"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+      "format": {
+        "type": "topojson",
+        "feature": "countries"
+      },
+      "transform": [
+        {
+          "type": "lookup",
+          "from": "terror",
+          "key": "country_txt",
+          "fields": [
+            "properties.name"
+          ],
+          "values": [
+            "count"
+          ],
+          "as": [
+            "Terrorism_Count"
+          ]
+        },
+        {
+          "type": "formula",
+          "as": "Log_Count",
+          "expr": "datum.Terrorism_Count+0.1"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": "equalEarth"
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "log",
+      "domain": [
+        10,
+        1000,
+        5000
+      ],
+      "range": {
+        "scheme": "goldred",
+        "count": 3
+      }
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom-left",
+      "title": "Terrorism Count"
+    }
+  ],
+  "marks": [
+    {
+      "type": "shape",
+      "from": {
+        "data": "map"
+      },
+      "encode": {
+        "enter": {
+          "tooltip": {
+            "signal": "{'Country': datum.properties.name, 'Terrorism Count': datum.Terrorism_Count}"
+          }
+        },
+        "update": {
+          "fill": {
+            "scale": "color",
+            "field": "Log_Count"
+          }
+        },
+        "hover": {
+          "fill": {
+            "value": "red"
+          }
+        }
+      },
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "projection"
+        }
+      ]
+    }
+  ]
+}
