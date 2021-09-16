@@ -1,8 +1,10 @@
 #assgn2 {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+	left: 10px;
+
+}
+#title{
+	text-align: center;
+	font-size: 50px;
+	font-family: sans-serif;
+
 }

@@ -79,7 +79,9 @@
     {
       "fill": "color",
       "orient": "bottom-left",
-      "title": "Terrorism Count"
+      "title": "Terrorism Count",
+      "labelAlign":"left",
+      "padding":40
     }
   ],
   "marks": [
