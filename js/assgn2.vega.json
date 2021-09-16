@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": "Global Terrorism Around the World from 1970-2017",
-  "description": "A choropleth map depicting U.S. unemployment rates by county in 2009.",
+  "description": "",
+
   "width": 960,
   "height": 500,
   "data": [
