@@ -3,8 +3,8 @@
   "title": "Global Terrorism Around the World from 1970-2017",
   "description": "",
 
-  "width": 960,
-  "height": 500,
+  "width": 880,
+  "height": 300,
   "data": [
     {
       "name": "terror",
@@ -66,11 +66,12 @@
       "domain": [
         10,
         1000,
-        5000
+        5000,
+        10000
       ],
       "range": {
-        "scheme": "goldred",
-        "count": 3
+        "scheme": "reds",
+        "count": 4
       }
     }
   ],
@@ -101,7 +102,7 @@
         },
         "hover": {
           "fill": {
-            "value": "red"
+            "value": "black"
           }
         }
       },
