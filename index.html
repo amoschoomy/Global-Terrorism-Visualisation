@@ -7,10 +7,22 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-<p id="title">Terrorism in the World</p>
+<div id="title">
+<h1 id="titleheader">Terrorism in the World</h1>
+<b id="author">Author: Amos Choo</b>
+</div>
+
 </head>
 
 <body>
+<section>
+
+<p>
+Below is the world map showing how severe is the act of terrorism in the timespan of 1970-2017.
+The more saturated the colour at the country is, the worse the terrorism.
+Countries in the East Asia such as Iraq, India and Afghanistan have been plagued with plentitude of cases of 
+terrorism due to various purposes such as religious motivation or civil war.
+</p>
 <div id="assgn2"></div>
 <script type="text/javascript">
 
@@ -19,10 +31,16 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
+</section>
 
 
+
+<section>
+<p>
+The act of terrorism have costed a lot of lives and are still at a dangerously high numbers at around 26000 deaths recorded
+in total for the year of 2017.
+</p>
 <div id="linechart"></div>
-<p>PUNDEK</p>
 <script type="text/javascript">
 
   var spec3 ="js/linechart.vega.json";
@@ -30,6 +48,8 @@
 
   }).catch(console.error);
 </script>  
+</section>
 
 </body>
+</html>
 </html>

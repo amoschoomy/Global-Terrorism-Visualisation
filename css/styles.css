@@ -4,7 +4,14 @@
 }
 #title{
 	text-align: center;
-	font-size: 50px;
 	font-family: sans-serif;
 
+}
+
+#author {
+	font-size: small;
+}
+
+#titleheader{
+	font-size: 50px;
 }
