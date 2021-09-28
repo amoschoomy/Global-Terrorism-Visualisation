@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 880,
+    "height": 300,
+    "data": {"url": "data\\globalterrorismdb_0718dist.csv","name": "casualities"},
+    "params": [{
+      "name": "year_range",
+      "value":1970,
+      "bind":{
+        "input": "range",
+        "min":1970,
+        "max": 2017,
+        "step": 1,
+        "name": "From Year"
+      }
+    }],
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "iyear"},
+      "y": {"aggregate": "sum", "field": "nkill"}
+    },
+    "transform": [{
+      "filter":"datum.iyear>=year_range-1"
+    }]
+  }
