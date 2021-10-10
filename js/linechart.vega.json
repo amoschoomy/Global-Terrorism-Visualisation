@@ -22,7 +22,7 @@
         "mark":"line",
         "encoding": {
           "x": {"field": "iyear","title":"Year"},
-          "y": {"aggregate": "sum", "field": "nkill","title":"Total Deaths"}
+          "y": {"aggregate": "mean", "field": "nkill","title":"Deaths Per Attack"}
         }
       },
       {
@@ -33,7 +33,8 @@
           "fontStyle": "italic"
         },
         "encoding": {
-          "text":{"value":"Rise of ISIS campaign in Syria and Iraq"},
+          "text":{"value":["Rise of ISIS campaign"]},
+          
           "color":{"value":"black"},
           "opacity":{
             "condition":{
@@ -52,10 +53,10 @@
       "x":{
         "field":"iyear"
       },
-      "y":{"aggregate": "sum","type":"quantitative", "field": "nkill"},
+      "y":{"aggregate": "mean","type":"quantitative", "field": "nkill"},
       "tooltip":[
         {"field":"iyear","title":"Year"
-      },{"field":"nkill","aggregate":"sum","type": "quantitative","format":",","title":"Total Deaths"}
+      },{"field":"nkill","aggregate":"mean","type": "quantitative","format":".2f","title":"Deaths Per Attack"}
     ]
 
     }
