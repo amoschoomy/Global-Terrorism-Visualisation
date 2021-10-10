@@ -1,7 +1,41 @@
+body{
+	background-color: aquamarine;
+}
+p{
+	font-size: x-large;
+}
+
+#mapintro{
+	padding-left: 60px;
+}
+
+#lineintro{
+	padding-left: 60px;
+}
+
+#donutintro{
+	padding-left: 60px;
+}
+
+#barintro{
+	padding-left: 60px;
+}
+
+#suc{
+	color: red;
+}
+
+#fail{
+	color: rgba(2, 46, 19, 0.575);
+}
+
 #assgn2 {
 	left: 10px;
-
 }
+#barchart{
+	padding-left: 60px;
+}	
+
 #title{
 	text-align: center;
 	font-family: sans-serif;
@@ -14,4 +48,8 @@
 
 #titleheader{
 	font-size: 50px;
+}
+
+.vega-bindings{
+	padding-left: 60px;
 }

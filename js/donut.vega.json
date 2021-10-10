@@ -1,0 +1,48 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"title": "How has the act of terrorism impacted lives over the years?",
+"config": {"background":null},
+"width": 880,
+"height": 300,
+"data": {"url": "data\\globalterrorismdb_0718dist.csv","name": "success"},
+"transform": [{
+    "groupby": [
+        "success"
+    ],
+    "aggregate": [{
+        "field": "sucesss",
+        "op": "count",
+        "as": "hip"
+    }]
+}
+,
+{
+    "window": [
+        {
+            "op":"sum",
+            "field": "hip",
+            "as": "TotalAttempt"
+        }
+    ],
+    "frame": [null,null]
+},
+{
+    "calculate": "datum.hip/datum.TotalAttempt *100",
+    "as": "Percentage"
+}
+],
+"mark":{"type": "arc","innerRadius":50},
+"encoding": {
+    "theta":{"field":"Percentage","type": "quantitative"},
+    "color":{"field":"success","type": "nominal", "scale":{
+        "domain":["1","0"],
+        "range":["red","green"]
+    },
+    "legend":{
+        "labelExpr":"{0:'Failed', 1:'Success'}[datum.label]"},
+    "title":"Attacks"
+},
+"tooltip":[
+    {"field":"Percentage","title":"Percentage","format":".2f"}
+]
+}
+}

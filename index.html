@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 <div id="title">
 <h1 id="titleheader">Terrorism in the World</h1>
-<b id="author">Author: Amos Choo</b>
+<h2 id="author">Author: Amos Choo</h2>
 </div>
 
 </head>
@@ -17,11 +17,12 @@
 <body>
 <section>
 
-<p>
-Below is the world map showing how severe is the act of terrorism in the timespan of 1970-2017.
-The more saturated the colour at the country is, the worse the terrorism.
-Countries in the East Asia such as Iraq, India and Afghanistan have been plagued with plentitude of cases of 
-terrorism due to various purposes such as religious motivation or civil war.
+<p id="mapintro">
+Terrorism has been a reoccuring issue in the world almost every year. Majority of the world has been plagued
+with multiple terrorist attacks for decades since World War II ended. 
+<br>
+Let's take a look at how much terrorism 
+cases has affected each country.
 </p>
 <div id="assgn2"></div>
 <script type="text/javascript">
@@ -34,11 +35,11 @@ terrorism due to various purposes such as religious motivation or civil war.
 </section>
 
 
-
 <section>
-<p>
-The act of terrorism have costed a lot of lives and are still at a dangerously high numbers at around 26000 deaths recorded
-in total for the year of 2017.
+<p id="lineintro">
+The act of terrorism have costed a lot of lives and are still at a dangerously high numbers at around <b>26000</b> deaths recorded
+in total for the year of <b>2017</b>. <br>Although the trend of deaths from terrorism have been quite inconsistent in recent years,
+the number of deaths due to terrorism have not dropped below <b>5000</b> since <b>2003</b>
 </p>
 <div id="linechart"></div>
 <script type="text/javascript">
@@ -48,6 +49,45 @@ in total for the year of 2017.
 
   }).catch(console.error);
 </script>  
+</section>
+
+
+<section>
+  <p id="donutintro">
+    An alarming high percentage of <b id="suc">89%</b> was recorded as successful terrorist attack while only <b id="fail">11%</b> of terrorist attacks are foiled.
+    <br>
+    Authorities needs to take charge to decrease the number of successful terrorist attacks because 
+    the lesser the number of succesful terrorist attacks, the lesser the number of casualities recorded
+  </p>
+  <div id="donutchart"></div>
+  <script type="text/javascript">
+  var spec4="js/donut.vega.json";
+  vegaEmbed("#donutchart",spec4).then(function(result){
+
+  }).catch(console.error);
+
+</script>
+</section>
+
+<section>
+
+  <p id="barintro">
+    Terrorism comes in many form mostly causing physical harm to humans and/or infrastructures,
+    so here are some of the methodolgies of terrorism studied and visualised.
+    <br><br>
+    Bombing is the most common methodology of attack with <b>88000</b> of terrorism cases reported
+    are due to bombing.
+    <br><br>
+    Even more fascinating, the rest of the terrorism methodology combined only amounts to about <b>93000</b>
+    cases which is barely higher than terrorist attacks conducted through bombing.
+  </p>
+  <div id="barchart"></div>
+  <script type="text/javascript">
+  var spec5="js/barchart.vega.json";
+  vegaEmbed("#barchart",spec5).then(function(result){
+
+  }).catch(console.error);
+  </script>
 </section>
 
 </body>

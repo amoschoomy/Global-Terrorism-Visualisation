@@ -3,6 +3,7 @@
     "title": "How has the act of terrorism impacted lives over the years?",
     "width": 880,
     "height": 300,
+    "config": {"background":null},
     "data": {"url": "data\\globalterrorismdb_0718dist.csv","name": "casualities"},
 
     "params": [{
