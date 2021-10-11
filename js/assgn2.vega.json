@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "title": "Global Terrorism Around the World from 1970-2017",
   "description": "",
 
   "width": 880,
@@ -62,16 +61,17 @@
   "scales": [
     {
       "name": "color",
-      "type": "log",
+      "type": "bin-ordinal",
       "domain": [
-        10,
+        0,
+        250,
         1000,
         5000,
-        10000
+        10000,
+        20000
       ],
       "range": {
-        "scheme": "reds",
-        "count": 4
+        "scheme": "reds"
       }
     }
   ],
@@ -104,7 +104,7 @@
         },
         "hover": {
           "fill": {
-            "value": "black"
+            "value": "blue"
           }
         }
       },

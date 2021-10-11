@@ -1,0 +1,66 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width": 880,
+"height": 300,
+"config": {"background":null},
+"data": {"url": "data\\globalterrorismdb_0718dist.csv","name": "attack"},
+"transform": [{
+    "groupby": [
+        "attacktype1_txt"
+    ],
+    "aggregate": [{
+        "field": "attacktype1_txt",
+        "op": "count",
+        "as": "type_count"
+    }]
+}
+],
+"params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+"mark":{"type":"bar","stroke":"black","cursor":"pointer"},
+"encoding": {
+
+    "x":{
+        "field":"type_count",
+        "type":"quantitative",
+        "title": "Number of Attacks"
+    },
+    "y":{
+        "field":"attacktype1_txt",
+        "type": "nominal",
+        "title":"Type of Attack"
+    },
+    "color": {
+        "field": "attacktype1_txt",
+        "title":"Type of Attack",
+        "type": "nominal",
+        "scale": {
+          "range":"category" }},
+    "tooltip":[
+        {"field":"type_count","title":"Count"}
+    ],
+    "fillOpacity": {
+        "condition": {"param": "select", "value": 1},
+        "value": 0.3
+      },
+      "strokeWidth": {
+        "condition": [
+          {
+            "param": "select",
+            "empty": false,
+            "value": 2
+          },
+          {
+            "param": "highlight",
+            "empty": false,
+            "value": 1
+          }
+        ],
+        "value": 0
+      }
+}
+}

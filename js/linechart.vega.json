@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 880,
+    "height": 300,
+    "config": {"background":null},
+    "data": {"url": "data\\globalterrorismdb_0718dist.csv","name": "casualities"},
+
+    "params": [{
+      "name": "year_range",
+      "value":1970,
+      "bind":{
+        "input": "range",
+        "min":1970,
+        "max": 2016,
+        "step": 1,
+        "name": "From Year"
+      }
+    }],
+    "layer":[
+      {
+        "mark":"line",
+        "encoding": {
+          "x": {"field": "iyear","title":"Year"},
+          "y": {"aggregate": "mean", "field": "nkill","title":"Deaths Per Attack"}
+        }
+      },
+      {
+        "mark":{
+          "type": "text",
+          "align":"center",
+          "fontSize": 12.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text":{"value":["Rise of ISIS campaign"]},
+          
+          "color":{"value":"black"},
+          "opacity":{
+            "condition":{
+              "test":"datum['iyear']== 2014",
+              "value":1
+            },
+            "value":0
+          }
+        }
+      }
+    ],   
+    "transform": [{
+      "filter":"datum.iyear>=year_range"
+    }],
+    "encoding": {
+      "x":{
+        "field":"iyear"
+      },
+      "y":{"aggregate": "mean","type":"quantitative", "field": "nkill"},
+      "tooltip":[
+        {"field":"iyear","title":"Year"
+      },{"field":"nkill","aggregate":"mean","type": "quantitative","format":".2f","title":"Deaths Per Attack"}
+    ]
+
+    }
+    
+  }
