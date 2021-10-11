@@ -1,5 +1,4 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"title": "Terrorism Methodology",
 "width": 880,
 "height": 300,
 "config": {"background":null},

@@ -1,5 +1,4 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"title": "How has the act of terrorism impacted lives over the years?",
 "config": {"background":null},
 "width": 880,
 "height": 300,
