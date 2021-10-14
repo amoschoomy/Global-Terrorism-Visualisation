@@ -1,5 +1,5 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-"width": 880,
+"width": 600,
 "height": 300,
 "config": {"background":null},
 "data": {"url": "data\\globalterrorismdb_0718dist.csv","name": "attack"},
